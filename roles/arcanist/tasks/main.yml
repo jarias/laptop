@@ -1,0 +1,14 @@
+---
+- name: install arcanist
+  git:
+    repo: "{{ item.repo }}"
+    dest: "/usr/local/lib/{{ item.dest }}"
+  with_items:
+    - { repo: "https://github.com/phacility/libphutil.git", dest: "libphutil" }
+    - { repo: "https://github.com/phacility/arcanist.git", dest: "arcanist" }
+
+- name: symlink arc to /usr/local/bin
+  file:
+    src: /usr/local/lib/arcanist/bin/arc
+    dest: /usr/local/bin/arc
+    state: link

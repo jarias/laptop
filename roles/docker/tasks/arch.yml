@@ -1,0 +1,4 @@
+---
+- name: arch | install Docker
+  pacman:
+    name: docker

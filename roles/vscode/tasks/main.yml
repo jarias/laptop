@@ -1,0 +1,5 @@
+---
+- name: install vscode
+  aur:
+    name: visual-studio-code-bin
+    user: aurman

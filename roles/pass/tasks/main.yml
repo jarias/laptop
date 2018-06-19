@@ -1,0 +1,8 @@
+---
+- name: install pass https://www.passwordstore.org/
+  pacman:
+    name: pass
+
+- name: install Rofi pass script
+  aur:
+    name: rofi-pass

@@ -1,0 +1,6 @@
+[Unit]
+Description=NAS Backups
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c /usr/local/bin/backups.sh

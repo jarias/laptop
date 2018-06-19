@@ -1,0 +1,5 @@
+---
+- name: arch | install Atom
+  aur:
+    name: atom-editor-bin
+    user: aurman

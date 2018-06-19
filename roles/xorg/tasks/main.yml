@@ -1,0 +1,20 @@
+---
+- name: install xorg
+  pacman:
+    name: "{{ item }}"
+  with_items:
+    - xorg-server
+    - xf86-video-intel
+    - xorg-xinput
+    - xorg-xbacklight
+    - xorg-xinit
+    - xrog-xprop
+
+- name: install xorg config files
+  copy:
+    src: "{{ item }}"
+    dest: "/etc/X11/xorg.conf.d/{{ item }}"
+  with_items:
+    - 10-monitor.conf
+    - 20-trackpad.conf
+    - 30-intel.conf

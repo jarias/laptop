@@ -1,0 +1,5 @@
+---
+- name: install Google Chrome
+  aur:
+    name: google-chrome
+    user: aurman

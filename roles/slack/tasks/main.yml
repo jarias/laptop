@@ -1,0 +1,5 @@
+---
+- name: install slack
+  aur:
+    name: slack-desktop
+    user: aurman

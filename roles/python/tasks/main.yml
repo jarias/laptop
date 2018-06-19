@@ -1,0 +1,20 @@
+---
+- name: install python
+  pacman:
+    name: python
+
+- name: install Python tools and packages
+  pip:
+    name: "{{ item }}"
+    extra_args: "--user -U"
+    executable: pip3
+  with_items:
+    - awscli
+    - pgcli
+    - http-prompt
+    - saws
+    - autopep8
+    - aws-google-auth[u2f]
+    - i3ipc
+    - python-language-server
+  become_user: "{{user }}"

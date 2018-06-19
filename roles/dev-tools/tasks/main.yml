@@ -1,0 +1,27 @@
+---
+- name: install extra dev tools
+  pacman:
+    name: "{{ item }}"
+  with_items:
+    - git
+    - jq
+    - curl
+    - tmux
+    - cloc
+    - htop
+    - pandoc
+    - the_silver_searcher
+    - dos2unix
+    - heroku-cli
+    - ngrok
+    - imagemagick
+    - ranger
+    - zsh
+
+- name: install extra dev tools from AUR
+  aur:
+    name: "{{ item }}"
+  with_items:
+    - urlview
+    - universal-ctags-git
+    - mkpasswd

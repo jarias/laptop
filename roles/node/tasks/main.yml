@@ -1,0 +1,15 @@
+---
+- name: install NVM https://github.com/creationix/nvm
+  aur:
+    name: nvm
+
+- name: create ~/.nvm directory
+  file:
+    path: ~/.nvm
+  become_user: "{{ user }}"
+
+- name: copy default-packages config file
+  copy:
+    src: default-packages
+    dest: ~/.nvm/default-packages
+  become_user: "{{ user }}"

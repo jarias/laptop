@@ -1,0 +1,8 @@
+---
+- name: install buku
+  aur:
+    name: buku
+
+- name: install buku rofi script
+  aur:
+    name: buku_run-git

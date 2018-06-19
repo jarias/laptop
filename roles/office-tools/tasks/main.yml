@@ -1,0 +1,12 @@
+---
+- name: install LibreOffice
+  pacman:
+    name: libreoffice-fresh
+
+- name: install PDF reader
+  pacman:
+    name: xreader
+
+- name: install bc
+  pacman:
+    name: bc

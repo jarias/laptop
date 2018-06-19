@@ -1,0 +1,15 @@
+---
+- name: install font awesome
+  aur:
+    name: ttf-font-awesome-4
+
+- name: install system fonts
+  pacman:
+    name: "{{ item }}"
+  with_items:
+    - ttf-hack
+    - tff-liberation
+    - noto-fonts
+    - noto-fonts-cjk
+    - noto-fonts-emoji
+    - noto-fonts-extra

@@ -1,0 +1,44 @@
+---
+- name: install i3
+  pacman:
+    name: "{{ item }}"
+  with_items:
+    - i3-wm
+    - i3lock
+    - perl-anyevent-i3
+
+- name: install polybar dependencies
+  pacman:
+    name: "{{ item }}"
+  with_items:
+    - wireless_tools
+    - jsoncpp
+
+- name: install polybar
+  aur:
+    name: polybar
+
+- name: install other desktop environment tools
+  pacman:
+    name: "{{ item }}"
+  with_items:
+    - xautolock
+    - feh
+    - pulseaudio
+    - pulseaudio-alsa
+    - alsa-tools
+    - dunst
+    - pavucontrol
+    - lxappearance-gtk3
+    - vinagre
+    - arc-gtk-theme
+    - xfce4-screenshooter
+    - xfce4-power-manager
+    - udiskie
+
+- name: enable pulsaudio socket
+  systemd:
+    name: pulseaudio.socket
+    enabled: yes
+    user: yes
+  become_user: "{{ user }}"

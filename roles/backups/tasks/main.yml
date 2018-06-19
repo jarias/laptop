@@ -1,0 +1,4 @@
+---
+- include: nas.yml
+  when: nas_hostname is defined and
+        nas_username is defined

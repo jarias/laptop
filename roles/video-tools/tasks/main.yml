@@ -1,0 +1,13 @@
+---
+- name: install video tools
+  pacman:
+    name: "{{ item }}"
+  with_items:
+    - mpv
+    - mkvtoolnix-gui
+    - handbrake
+    - ffmpeg
+
+- name: install makemkv
+  aur:
+    name: makemkv

@@ -1,0 +1,14 @@
+---
+- name: install Keybase
+  pacman:
+    name: "{{ item }}"
+  with_items:
+    - keybase
+    - kbfs
+
+- name: enable kbfs service
+  systemd:
+    name: kbfs.service
+    user: yes
+    enabled: yes
+  become_user: "{{ user }}"

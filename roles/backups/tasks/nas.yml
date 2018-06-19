@@ -1,0 +1,28 @@
+---
+- name: install rsync
+  pacman:
+    name: rsync
+
+- name: create backups systemd service file
+  copy:
+    src: backups.service
+    dest: /usr/lib/systemd/user/backups.service
+
+- name: create backups systemd timer file
+  copy:
+    src: backups.timer
+    dest: /usr/lib/systemd/user/backups.timer
+
+- name: create backups script
+  template:
+    src: backups.sh.j2
+    dest: /usr/local/bin/backups.sh
+    mode: 0755
+
+- name: enable backups timer
+  systemd:
+    name: backups.timer
+    state: started
+    enabled: yes
+    user: yes
+  become_user: "{{ user }}"

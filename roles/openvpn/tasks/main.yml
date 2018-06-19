@@ -1,0 +1,8 @@
+---
+- name: install OpenVPN
+  pacman:
+    name: openvpn
+
+- name: install OpenVPN systemd resolved script
+  aur:
+    name: openvpn-update-systemd-resolved

@@ -1,0 +1,12 @@
+---
+- name: install mutt
+  pacman:
+    name: mutt
+
+- name: install isync
+  pacman:
+    name: isync
+
+- name: install w3m
+  pacman:
+    name: w3m

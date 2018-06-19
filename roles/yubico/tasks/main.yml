@@ -1,0 +1,8 @@
+---
+- name: install Yubico tools
+  pacman:
+    name: "{{ item }}"
+  with_items:
+    - yubikey-personalization-gui
+    - yubikey-personalization
+    - libusb-compat

@@ -1,0 +1,4 @@
+---
+- name: install Go
+  pacman:
+    name: go

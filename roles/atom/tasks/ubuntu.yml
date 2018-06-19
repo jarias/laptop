@@ -1,0 +1,4 @@
+---
+- name: ubuntu | install Atom
+  apt:
+    deb: https://atom-installer.github.com/v1.27.2/atom-amd64.deb

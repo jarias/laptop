@@ -1,0 +1,4 @@
+---
+- name: install Firefox
+  pacman:
+    name: firefox

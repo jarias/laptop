@@ -1,0 +1,4 @@
+---
+- name: install Inkscape
+  pacman:
+    name: inkscape

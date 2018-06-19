@@ -1,0 +1,28 @@
+---
+- name: install tarsnap
+  pacman:
+    name: tarsnap
+
+- name: create tarsnap script
+  copy:
+    src: tarsnap.sh
+    dest: /usr/local/bin/tarsnap.sh
+    mode: 0755
+
+- name: create tarsnap systemd timer file
+  copy:
+    src: tarsnap.timer
+    dest: /usr/lib/systemd/user/tarsnap.timer
+
+- name: create tarsnap systemd service file
+  copy:
+    src: files/tarsnap.service
+    dest: /usr/lib/systemd/user/tarsnap.service
+
+- name: enable tarsnap systemd timer
+  systemd:
+    name: tarsnap.timer
+    state: started
+    enabled: yes
+    user: yes
+  become_user: "{{ user }}"

@@ -1,0 +1,8 @@
+---
+- name: install Rofi
+  pacman:
+    name: rofi
+
+- name: install NetworkManager Rofi script
+  aur:
+    name: networkmanager-dmenu-git

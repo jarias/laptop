@@ -1,0 +1,7 @@
+---
+- name: enable gpg agent daemon
+  systemd:
+    name: gpg-agent
+    enabled: yes
+    user: yes
+  become_user: "{{ user }}"

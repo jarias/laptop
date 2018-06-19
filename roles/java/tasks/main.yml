@@ -1,0 +1,7 @@
+---
+- name: install OpenJDK
+  pacman:
+    name: "{{ item }}"
+  with_items:
+    - jdk10-openjdk
+    - jdk8-openjdk

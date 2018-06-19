@@ -1,0 +1,8 @@
+---
+- include_tasks: ubuntu.yml
+  when: ansible_distribution == 'Ubuntu' or
+        ansible_distribution == 'elementary OS' or
+        ansible_distribution == 'Linux Mint'
+
+- include_tasks: arch.yml
+  when: ansible_distribution == 'Archlinux'

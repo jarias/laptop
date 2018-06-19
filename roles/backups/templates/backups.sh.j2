@@ -1,0 +1,27 @@
+#!/bin/sh
+
+CURENT_DATE=$(date "+%Y-%m-%dT%H_%M_%S")
+
+NAS="${USER}@{{ nas_hostname }}"
+
+rsync -azP \
+  -e ssh \
+  --exclude 'output-qemu' \
+  --exclude 'packer_cache' \
+  --exclude '*.vmdk' \
+  --exclude '*.iso' \
+  --delete \
+  --delete-excluded \
+  --link-dest=../current \
+  ${HOME}/Documents \
+  ${HOME}/Pictures \
+  ${HOME}/Projects \
+  ${HOME}/.ssh \
+  ${HOME}/.local/share/buku \
+  ${HOME}/.password-store \
+  ${HOME}/.homesick \
+  ${NAS}::home/Backups/incomplete_back-${CURENT_DATE} &&
+  ssh ${NAS} \
+    "mv Backups/incomplete_back-${CURENT_DATE} Backups/back-${CURENT_DATE} \
+  && rm -f Backups/current \
+  && ln -s back-${CURENT_DATE} Backups/current"

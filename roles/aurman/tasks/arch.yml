@@ -1,0 +1,43 @@
+- name: update pacman repos
+  pacman:
+    update_cache: yes
+
+- name: arch | create AUR management user
+  user:
+    name: aurman
+    comment: "AUR manager"
+    shell: /bin/nologin
+    home: /var/lib/aurman
+    system: yes
+
+- name: arch | allow aurman user to sudo without password
+  template:
+    src: sudoer_aurman.j2
+    dest: /etc/sudoers.d/aurman
+    validate: 'visudo -cf %s'
+    mode: 0440
+
+- name: arch | download expac-git aur
+  unarchive:
+    src: https://aur.archlinux.org/cgit/aur.git/snapshot/expac-git.tar.gz
+    dest: /tmp
+    remote_src: yes
+    owner: aurman
+    group: aurman
+
+- name: arch | build expac-git aur package
+  shell: PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl makepkg -csrf --noconfirm --needed --noprogressbar
+  args:
+    chdir: /tmp/expac-git
+  become_user: aurman
+
+- name: arch | installe expac-git aur
+  shell: pacman -U --noconfirm *.pkg.tar.xz
+  args:
+    chdir: /tmp/expac-git
+
+- name: arch | install aurman
+  aur:
+    name: aurman
+    user: aurman
+    skip_pgp: yes

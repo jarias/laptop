@@ -1,0 +1,18 @@
+---
+- name: install ruby
+  pacman:
+    name: ruby
+
+- name: install default Ruby Gems
+  gem:
+    name: "{{ item }}"
+    user_install: yes
+    state: latest
+  with_items:
+    - bundler
+    - homesick
+    - git-smart
+    - ghost
+    - travis
+    - neovim
+  become_user: "{{ user }}"

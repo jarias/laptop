@@ -1,0 +1,21 @@
+---
+- name: install vdirsyncer
+  pacman:
+    name: vdirsyncer
+
+- name: install Python tools and packages
+  pip:
+    name: "{{ item }}"
+    extra_args: "--user -U"
+    executable: pip3
+  with_items:
+    - khard
+  become_user: "{{ user }}"
+
+- name: enable vdirsyncer timer
+  systemd:
+    name: vdirsyncer.timer
+    state: started
+    enabled: yes
+    user: yes
+  become_user: "{{ user }}"
