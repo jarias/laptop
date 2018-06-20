@@ -1,4 +1,9 @@
 ---
+- name: ensure vim is not installed
+  pacman:
+    name: vim
+    state: absent
+
 - name: install NeoVim deps
   pacman:
     name: "{{ item }}"
@@ -27,3 +32,12 @@
     url: "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
     dest: "~/.local/share/nvim/site/autoload/plug.vim"
   become_user: "{{ user }}"
+
+- name: install vimdiff
+  shell: echo -e '#!/bin/sh\nexec nvim -d "$@"'  > /usr/bin/vimdiff && chmod 755 /usr/bin/vimdiff
+
+- name: set vim as NeoVim
+  file:
+    src: /usr/bin/nvim
+    dest: /usr/bin/vim
+    state: link
