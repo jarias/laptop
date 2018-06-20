@@ -3,7 +3,7 @@
 set -e
 
 USERNAME=jarias
-USER_FULLNAME=Julio Arias
+USER_FULLNAME="Julio Arias"
 
 ln -sf /usr/share/zoneinfo/America/Costa_Rica /etc/localtime
 
@@ -19,6 +19,10 @@ cat <<EOF >/etc/hosts
 127.0.0.1 localhost
 ::1       localhost
 127.0.1.1 gildarts
+EOF
+
+cat <<EOF >/etc/vconsole.conf
+FONT=ter-132n
 EOF
 
 cat <<EOF >/etc/mkinitcpio.conf

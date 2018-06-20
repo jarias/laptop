@@ -18,6 +18,12 @@ cryptsetup open /dev/nvme0n1p3 cryptroot
 mkfs.xfs -f -L rootfs /dev/mapper/cryptroot
 mount /dev/mapper/cryptroot /mnt
 
+mkdir /mnt/boot
+mount /dev/nvme0n1p2 /mnt/boot
+
+mkdir /mnt/boot/EFI
+mount /dev/nvme0n1p1 /mnt/boot/EFI
+
 pacstrap /mnt \
   base \
   base-devel \
@@ -34,7 +40,9 @@ pacstrap /mnt \
   cups \
   fwupd \
   nfs-utils \
-  nss-mdns
+  nss-mdns \
+  terminus-font \
+  git
 
 genfstab -U /mnt >>/mnt/etc/fstab
 
