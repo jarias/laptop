@@ -24,7 +24,7 @@ EOF
 cat <<EOF >/etc/mkinitcpio.conf
 # vim:set ft=sh
 
-MODULES=()
+MODULES=(i915)
 
 BINARIES=()
 
@@ -39,7 +39,7 @@ GRUB_DEFAULT=0
 GRUB_TIMEOUT=5
 GRUB_DISTRIBUTOR="Arch"
 GRUB_CMDLINE_LINUX_DEFAULT="quiet"
-GRUB_CMDLINE_LINUX="cryptdevice=/dev/sda3:cryptroot"
+GRUB_CMDLINE_LINUX="cryptdevice=/dev/nvme0n1p3:cryptroot"
 
 # Preload both GPT and MBR modules so that they are not missed
 GRUB_PRELOAD_MODULES="part_gpt part_msdos"

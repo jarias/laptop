@@ -4,17 +4,17 @@ set -e
 
 timedatectl set-ntp true
 
-parted -s /dev/sda mklabel gpt
-parted -s -a optimal /dev/sda mkpart ESP fat32 1MiB 551MiB
-parted -s /dev/sda set 1 esp on
-parted -s -a optimal /dev/sda mkpart boot ext4 551MiB 651MiB
-parted -s -a optimal /dev/sda mkpart primary ext4 651MiB 100%
+parted -s /dev/nvme0n1 mklabel gpt
+parted -s -a optimal /dev/nvme0n1 mkpart ESP fat32 1MiB 551MiB
+parted -s /dev/nvme0n1 set 1 esp on
+parted -s -a optimal /dev/nvme0n1 mkpart boot ext4 551MiB 651MiB
+parted -s -a optimal /dev/nvme0n1 mkpart primary ext4 651MiB 100%
 
-mkfs.vfat -F 32 /dev/sda1
-mkfs.ext4 -F -L boot /dev/sda2
+mkfs.vfat -F 32 /dev/nvme0n1p1
+mkfs.ext4 -F -L boot /dev/nvme0n1p2
 
-cryptsetup -y -v luksFormat --type luks2 /dev/sda3
-cryptsetup open /dev/sda3 cryptroot
+cryptsetup -y -v luksFormat --type luks2 /dev/nvme0n1p3
+cryptsetup open /dev/nvme0n1p3 cryptroot
 mkfs.xfs -f -L rootfs /dev/mapper/cryptroot
 mount /dev/mapper/cryptroot /mnt
 
