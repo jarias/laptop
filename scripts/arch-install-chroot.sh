@@ -104,5 +104,5 @@ useradd -c "$USER_FULLNAME" \
   -m \
   -s /bin/bash \
   -G wheel \
-  -p '$6$rounds=4096$UiRLnEIYxhK$MqRQ9zRbdRT53zD3P/itfeenX5.6pUBdZqLeQrDd5330K9HS4xg6Up7t1k.UOpKyzRrkeQw2BEnRWROs1NTL51' \
+  -p '$6$rounds=4096$zLFpzBXFusR1$ckEnstIQ3inB3USRuyQ2zJIMUiYqVQRbeNVFYGbec.iQ9Jl8fKbQkwk27fIhJytnJ3qXW21PVLNn.gm9wCNGV1' \
   $USERNAME
