@@ -8,9 +8,15 @@
   pacman:
     name: "{{ item }}"
   with_items:
+    - terminus-font
     - ttf-hack
     - ttf-liberation
     - noto-fonts
     - noto-fonts-cjk
     - noto-fonts-emoji
     - noto-fonts-extra
+
+- name: set console font
+  copy:
+    src: vconsole.conf
+    dest: /etc/vconsole.conf
