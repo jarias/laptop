@@ -15,6 +15,7 @@
     - imagemagick
     - ranger
     - zsh
+    - ldns
 
 - name: install extra dev tools from AUR
   aur:
