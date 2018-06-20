@@ -8,7 +8,7 @@
     - xorg-xinput
     - xorg-xbacklight
     - xorg-xinit
-    - xrog-xprop
+    - xorg-xprop
 
 - name: install xorg config files
   copy:

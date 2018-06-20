@@ -2,7 +2,9 @@
 - name: install buku
   aur:
     name: buku
+    user: aurman
 
 - name: install buku rofi script
   aur:
     name: buku_run-git
+    user: aurman

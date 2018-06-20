@@ -12,8 +12,6 @@
     - pandoc
     - the_silver_searcher
     - dos2unix
-    - heroku-cli
-    - ngrok
     - imagemagick
     - ranger
     - zsh
@@ -21,7 +19,10 @@
 - name: install extra dev tools from AUR
   aur:
     name: "{{ item }}"
+    user: aurman
   with_items:
     - urlview
     - universal-ctags-git
     - mkpasswd
+    - heroku-cli
+    - ngrok

@@ -16,3 +16,4 @@
 - name: install virtualization AUR tools
   aur:
     name: cloud-utils
+    user: aurman

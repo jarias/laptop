@@ -2,10 +2,12 @@
 - name: install NVM https://github.com/creationix/nvm
   aur:
     name: nvm
+    user: aurman
 
 - name: create ~/.nvm directory
   file:
     path: ~/.nvm
+    state: directory
   become_user: "{{ user }}"
 
 - name: copy default-packages config file

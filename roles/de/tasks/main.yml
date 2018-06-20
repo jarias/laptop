@@ -17,6 +17,7 @@
 - name: install polybar
   aur:
     name: polybar
+    user: aurman
 
 - name: install other desktop environment tools
   pacman:

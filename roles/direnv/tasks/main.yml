@@ -2,3 +2,4 @@
 - name: install direnv
   aur:
     name: direnv
+    user: aurman

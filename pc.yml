@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: gildarts
   become: yes
   roles:
     - pc

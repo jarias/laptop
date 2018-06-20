@@ -6,3 +6,4 @@
 - name: install NetworkManager Rofi script
   aur:
     name: networkmanager-dmenu-git
+    user: aurman

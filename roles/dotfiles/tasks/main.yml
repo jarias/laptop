@@ -5,6 +5,8 @@
     creates: "~/.homesick/repos/{{ item.name }}"
   with_items:
     - { repo: "{{ dotfiles_repo }}", name: dotfiles }
+  become_user: "{{ user }}"
 
 - name: symlink dotfiles
   shell: '$(ruby -e "print Gem.user_dir")/bin/homesick symlink --force dotfiles'
+  become_user: "{{ user }}"

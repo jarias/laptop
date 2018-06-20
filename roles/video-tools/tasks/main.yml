@@ -11,3 +11,4 @@
 - name: install makemkv
   aur:
     name: makemkv
+    user: aurman

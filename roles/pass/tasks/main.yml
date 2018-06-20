@@ -6,3 +6,4 @@
 - name: install Rofi pass script
   aur:
     name: rofi-pass
+    user: aurman

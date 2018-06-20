@@ -1,0 +1,5 @@
+---
+- name: install alacritty
+  aur:
+    name: alacritty-git
+    user: aurman

@@ -6,3 +6,4 @@
 - name: install OpenVPN systemd resolved script
   aur:
     name: openvpn-update-systemd-resolved
+    user: aurman

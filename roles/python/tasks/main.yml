@@ -3,6 +3,10 @@
   pacman:
     name: python
 
+- name: install python pip
+  pacman:
+    name: python-pip
+
 - name: install Python tools and packages
   pip:
     name: "{{ item }}"
