@@ -33,5 +33,7 @@ dependencies:
   - gimp
   - inkscape
   - java
+  - eclipse
   - dotfiles
+  - backups
   - alacritty

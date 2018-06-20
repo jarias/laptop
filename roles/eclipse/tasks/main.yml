@@ -1,0 +1,17 @@
+---
+- name: install Eclipse
+  pacman:
+    name: eclipse-java
+
+- name: install custom Eclipse shell script
+  copy:
+    src: eclipse.sh
+    dest: /usr/local/bin/eclipse.sh
+    mode: 0755
+
+- name: install custom Eclipse desktop file
+  copy:
+    src: eclipse.desktop
+    dest: ~/.local/share/applications/eclipse.desktop
+    mode: 0644
+  become_user: "{{ user }}"

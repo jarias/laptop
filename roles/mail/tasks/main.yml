@@ -10,3 +10,21 @@
 - name: install w3m
   pacman:
     name: w3m
+
+- name: create mbsync systemd timer file
+  copy:
+    src: mbsync.timer
+    dest: /usr/lib/systemd/user/mbsync.timer
+
+- name: create mbsync systemd service file
+  copy:
+    src: files/mbsync.service
+    dest: /usr/lib/systemd/user/mbsync.service
+
+- name: enable mbsync systemd timer
+  systemd:
+    name: mbsync.timer
+    state: started
+    enabled: yes
+    user: yes
+  become_user: "{{ user }}"

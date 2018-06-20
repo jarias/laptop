@@ -43,3 +43,8 @@
     enabled: yes
     user: yes
   become_user: "{{ user }}"
+
+- name: install hda-jack-retask.conf
+  copy:
+    src: hda-jack-retask.conf
+    dest: /etc/modprobe.d/hda-jack-retask.conf

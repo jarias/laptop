@@ -3,7 +3,7 @@
   pacman:
     name: tarsnap
 
-- name: create tarsnap script
+- name: install tasrsnap script
   copy:
     src: tarsnap.sh
     dest: /usr/local/bin/tarsnap.sh

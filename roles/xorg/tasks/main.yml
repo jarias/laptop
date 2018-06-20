@@ -9,6 +9,7 @@
     - xorg-xbacklight
     - xorg-xinit
     - xorg-xprop
+    - xorg-xdpyinfo
 
 - name: install xorg config files
   copy:
