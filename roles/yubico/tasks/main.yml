@@ -7,7 +7,7 @@
     - yubikey-personalization
     - libusb-compat
 
-- name: arch | download yubikey-full-disk-encryption
+- name: download yubikey-full-disk-encryption
   unarchive:
     src: https://github.com/agherzan/yubikey-full-disk-encryption/archive/master.zip
     dest: /tmp
@@ -15,18 +15,18 @@
     owner: aurman
     group: aurman
 
-- name: arch | build yubikey-full-disk-encryption aur package
+- name: build yubikey-full-disk-encryption aur package
   shell: makepkg -csrf --noconfirm --needed --noprogressbar
   args:
     chdir: /tmp/yubikey-full-disk-encryption-master
   become_user: aurman
 
-- name: arch | installe yubikey-full-disk-encryption aur
+- name: installe yubikey-full-disk-encryption aur
   shell: pacman -U --noconfirm *.pkg.tar.xz
   args:
     chdir: /tmp/yubikey-full-disk-encryption-master
 
-- name: arch | install ykfde.conf
+- name: install ykfde.conf
   copy:
     src: ykfde.conf
     dest: /etc/ykfde.conf
