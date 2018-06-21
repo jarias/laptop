@@ -19,3 +19,8 @@
     - 10-monitor.conf
     - 20-trackpad.conf
     - 30-intel.conf
+
+- name: blacklist nouveau kernel module
+  copy:
+    src: nouveau_blacklist.conf
+    dest: /etc/modprobe.d/nouveau_blacklist.conf
