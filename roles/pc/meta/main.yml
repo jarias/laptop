@@ -37,3 +37,4 @@ dependencies:
   - dotfiles
   - backups
   - alacritty
+  - 3dprint

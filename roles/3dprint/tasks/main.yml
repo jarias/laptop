@@ -1,0 +1,8 @@
+---
+- name: install Freecad
+  command: aurman -S --noedit --noconfirm --needed freecad
+  become_user: aurman
+
+- name: install Cura
+  pacman:
+    name: cura
