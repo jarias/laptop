@@ -8,3 +8,9 @@
     name: "{{ user }}"
     groups: docker
     append: yes
+
+- name: start Docker service
+  service:
+    name: docker
+    state: started
+    enabled: yes
