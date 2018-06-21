@@ -24,6 +24,6 @@
   with_items:
     - urlview
     - universal-ctags-git
-    - mkpasswd
     - heroku-cli
     - ngrok
+    - doctl-bin
