@@ -36,6 +36,7 @@
     - xfce4-screenshooter
     - xfce4-power-manager
     - udiskie
+    - network-manager-applet
 
 - name: enable pulsaudio socket
   systemd:
@@ -43,13 +44,3 @@
     enabled: yes
     user: yes
   become_user: "{{ user }}"
-
-- name: install hda-jack-retask.conf kernel module config
-  copy:
-    src: hda-jack-retask.conf
-    dest: /etc/modprobe.d/hda-jack-retask.conf
-
-- name: install nobeep.conf kernel module config
-  copy:
-    src: nobeep.conf
-    dest: /etc/modprobe.d/nobeep.conf

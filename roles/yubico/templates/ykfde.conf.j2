@@ -17,7 +17,7 @@ DBG="";  # "" = Debug output OFF
 
 # If you want to use a YubiKey Challenge-Response:
 
-   #YKFDE_CHALLENGE="";  # defaults to NO (""), means NO Challenge, which will skip the YubiKey Challenge-Response part (and fallback to password prompt).
+YKFDE_CHALLENGE="{{ ykfde_challenge }}";  # defaults to NO (""), means NO Challenge, which will skip the YubiKey Challenge-Response part (and fallback to password prompt).
    #YKFDE_CHALLENGE_SLOT=1; # defaults to slot 1
    #YKFDE_CHALLENGE_YUBIKEY_INSERT_TIMEOUT=-1;  # defaults to -1 (unlimited), otherwise set to number of seconds
 YKFDE_CHALLENGE_PASSWORD_NEEDED="1"; # "" means NO, 1 means YES

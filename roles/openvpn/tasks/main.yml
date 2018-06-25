@@ -7,3 +7,7 @@
   aur:
     name: openvpn-update-systemd-resolved
     user: aurman
+
+- name: install NetworkManager OpenVPN support
+  pacman:
+    name: networkmanager-openvpn

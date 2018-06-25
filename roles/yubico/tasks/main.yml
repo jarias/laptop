@@ -27,7 +27,7 @@
     chdir: /tmp/yubikey-full-disk-encryption-master
 
 - name: install ykfde.conf
-  copy:
-    src: ykfde.conf
+  template:
+    src: ykfde.conf.j2
     dest: /etc/ykfde.conf
     mode: 0600

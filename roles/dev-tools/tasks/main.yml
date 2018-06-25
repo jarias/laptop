@@ -16,6 +16,8 @@
     - ranger
     - zsh
     - ldns
+    - sshpass
+    - gnu-netcat
 
 - name: install extra dev tools from AUR
   aur:
@@ -27,3 +29,9 @@
     - heroku-cli
     - ngrok
     - doctl-bin
+
+- name: install tmux tpm
+  git:
+    repo: https://github.com/tmux-plugins/tpm
+    dest: ~/.tmux/plugins/tpm
+  become_user: "{{ user }}"
