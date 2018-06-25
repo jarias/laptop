@@ -18,6 +18,7 @@
     - ldns
     - sshpass
     - gnu-netcat
+    - emacs
 
 - name: install extra dev tools from AUR
   aur:

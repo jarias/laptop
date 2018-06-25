@@ -11,6 +11,10 @@
   pacman:
     name: w3m
 
+- name: install msmtp
+  pacman:
+    name: msmtp
+
 - name: create mbsync systemd timer file
   copy:
     src: mbsync.timer

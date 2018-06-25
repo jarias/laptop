@@ -37,6 +37,7 @@
     - xfce4-power-manager
     - udiskie
     - network-manager-applet
+    - powertop
 
 - name: enable pulsaudio socket
   systemd:
