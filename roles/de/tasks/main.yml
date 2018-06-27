@@ -46,13 +46,14 @@
     user: yes
   become_user: "{{ user }}"
 
-- name: install powertop auto tune service
-  copy:
-    src: powertop.service
-    dest: /etc/systemd/system/powertop.service
+- name: add user to sys group (printing)
+  user:
+    name: "{{ user }}"
+    groups: sys
+    append: yes
 
-- name: start powertop service
+- name: start cups service
   service:
-    name: powertop
+    name: org.cups.cupsd
     state: started
     enabled: yes
