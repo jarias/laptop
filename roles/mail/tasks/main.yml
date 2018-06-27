@@ -15,6 +15,23 @@
   pacman:
     name: msmtp
 
+- name: install urxvt
+  pacman:
+    name: rxvt-unicode
+
+- name: download webkitgtk prebuild package
+  get_url:
+    url: https://cdn.repo.archlinuxcn.org/x86_64/webkitgtk-3%3A2.4.11-12-x86_64.pkg.tar.xz
+    dest: /tmp/webkitgtk.pkg.tar.xz
+
+- name: install webkitgtk
+  command: pacman -U --noconfirm /tmp/webkitgtk.pkg.tar.xz
+
+- name: install astroid
+  aur:
+    name: astroid
+    user: aurman
+
 - name: create mbsync systemd timer file
   copy:
     src: mbsync.timer
