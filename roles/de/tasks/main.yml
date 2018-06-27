@@ -45,3 +45,14 @@
     enabled: yes
     user: yes
   become_user: "{{ user }}"
+
+- name: install powertop auto tune service
+  copy:
+    src: powertop.service
+    dest: /etc/systemd/system/powertop.service
+
+- name: start powertop service
+  service:
+    name: powertop
+    state: started
+    enabled: yes
