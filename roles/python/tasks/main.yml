@@ -7,6 +7,10 @@
   pacman:
     name: python-pip
 
+- name: install python dbus
+  pacman:
+    name: python-dbus
+
 - name: install Python tools and packages
   pip:
     name: "{{ item }}"
