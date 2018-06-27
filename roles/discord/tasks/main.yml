@@ -1,0 +1,11 @@
+---
+- name: install libc++
+  aur:
+    name: libc++
+    user: aurman
+    skip_pgp: yes
+
+- name: install discord
+  aur:
+    name: discord
+    user: aurman

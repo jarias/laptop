@@ -8,6 +8,7 @@ dependencies:
   - docker
   - vscode
   - slack
+  - discord
   - firefox
   - mail
   - contacts
