@@ -7,3 +7,8 @@
   aur:
     name: networkmanager-dmenu-git
     user: aurman
+
+- name: install udiskie Rofi script
+  aur:
+    name: udiskie-dmenu-git
+    user: aurman
