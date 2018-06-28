@@ -17,3 +17,9 @@
   aur:
     name: cloud-utils
     user: aurman
+
+- name: enable libvirt service
+  service:
+    name: libvirtd
+    state: started
+    enabled: yes
