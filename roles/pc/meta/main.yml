@@ -9,6 +9,7 @@ dependencies:
   - vscode
   - slack
   - discord
+  - spotify
   - firefox
   - mail
   - contacts

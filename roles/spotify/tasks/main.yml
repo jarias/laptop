@@ -1,0 +1,5 @@
+---
+- name: install spotify
+  aur:
+    name: spotify
+    user: aurman
