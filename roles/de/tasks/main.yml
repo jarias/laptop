@@ -36,7 +36,7 @@
     - xfce4-screenshooter
     - xfce4-power-manager
     - udiskie
-    - network-manager-applet
+    - nm-connection-editor
     - powertop
 
 - name: enable pulsaudio socket
