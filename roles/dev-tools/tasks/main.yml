@@ -19,6 +19,7 @@
     - sshpass
     - gnu-netcat
     - emacs
+    - hub
 
 - name: install extra dev tools from AUR
   aur:
