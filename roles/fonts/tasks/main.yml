@@ -17,6 +17,11 @@
     - noto-fonts-extra
     - adobe-source-code-pro-fonts
 
+- name: install ttf-ms-fonts
+  aur:
+    name: ttf-ms-fonts
+    user: aurman
+
 - name: set console font
   copy:
     src: vconsole.conf

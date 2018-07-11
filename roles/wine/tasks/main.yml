@@ -2,3 +2,10 @@
 - name: install wine
   pacman:
     name: wine
+
+- name: install some lib32 deps
+  pacman:
+    name: "{{ item }}"
+  with_items:
+    - lib32-gnutls
+    - lib32-libldap
