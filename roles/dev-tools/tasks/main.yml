@@ -31,6 +31,7 @@
     - heroku-cli
     - ngrok
     - doctl-bin
+    - gitflow-avh
 
 - name: install tmux tpm
   git:
