@@ -21,7 +21,7 @@
     chdir: /tmp/yubikey-full-disk-encryption-master
   become_user: aurman
 
-- name: installe yubikey-full-disk-encryption aur
+- name: install yubikey-full-disk-encryption aur
   shell: pacman -U --noconfirm *.pkg.tar.xz
   args:
     chdir: /tmp/yubikey-full-disk-encryption-master
