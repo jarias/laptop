@@ -39,6 +39,7 @@
     - udiskie
     - nm-connection-editor
     - powertop
+    - nss-mdns
 
 - name: enable pulsaudio socket
   systemd:
