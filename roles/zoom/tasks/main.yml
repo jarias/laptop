@@ -1,0 +1,5 @@
+---
+- name: install zoom
+  aur:
+    name: zoom
+    user: aurman
