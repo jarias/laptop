@@ -20,6 +20,7 @@ rsync -azP \
   ${HOME}/.local/share/buku \
   ${HOME}/.password-store \
   ${HOME}/.homesick \
+  ${HOME}/.mail \
   ${NAS}::home/Backups/incomplete_back-${CURENT_DATE} &&
   ssh ${NAS} \
     "mv Backups/incomplete_back-${CURENT_DATE} Backups/back-${CURENT_DATE} \
