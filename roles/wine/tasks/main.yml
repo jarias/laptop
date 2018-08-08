@@ -16,3 +16,4 @@
   with_items:
     - lib32-gnutls
     - lib32-libldap
+    - lib32-libpulse
