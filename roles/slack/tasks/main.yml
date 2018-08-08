@@ -1,4 +1,4 @@
 ---
-- name: install slack
-  flatpak:
-    name: com.slack.Slack
+#- name: install slack
+#  flatpak:
+#    name: com.slack.Slack
