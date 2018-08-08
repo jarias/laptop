@@ -1,7 +1,14 @@
 ---
+- name: enable multilib pacman repo
+  lineinfile:
+    path: /etc/pacman.conf
+    regexp: "^#[multilib]\n#Include = /etc/pacman.d/mirrorlist\n"
+    line: "[multilib]\nInclude = /etc/pacman.d/mirrorlist\n"
+
 - name: install wine
   pacman:
-    name: wine
+    name: wine-staging
+    update_cache: yes
 
 - name: install some lib32 deps
   pacman:

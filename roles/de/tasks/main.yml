@@ -40,6 +40,8 @@
     - nm-connection-editor
     - powertop
     - nss-mdns
+    - flatpak
+    - compton
 
 - name: enable pulsaudio socket
   systemd:

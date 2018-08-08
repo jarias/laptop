@@ -1,5 +1,4 @@
 ---
 - name: install slack
-  aur:
-    name: slack-desktop
-    user: aurman
+  flatpak:
+    name: com.slack.Slack

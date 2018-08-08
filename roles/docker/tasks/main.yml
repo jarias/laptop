@@ -9,6 +9,10 @@
     groups: docker
     append: yes
 
+- name: install Docker Compose
+  pacman:
+    name: docker-compose
+
 - name: start Docker service
   service:
     name: docker

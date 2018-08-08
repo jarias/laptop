@@ -6,6 +6,7 @@
     - yubikey-personalization-gui
     - yubikey-personalization
     - libusb-compat
+    - unzip
 
 - name: download yubikey-full-disk-encryption
   unarchive:
