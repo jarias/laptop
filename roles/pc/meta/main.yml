@@ -40,3 +40,4 @@ dependencies:
   - backups
   - alacritty
   - 3dprint
+  - zoom
