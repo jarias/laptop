@@ -24,3 +24,9 @@
   copy:
     src: nouveau_blacklist.conf
     dest: /etc/modprobe.d/nouveau_blacklist.conf
+
+- name: install display-setup script
+  copy:
+    src: display-setup
+    dest: /usr/local/bin/display-setup
+    mode: 0755

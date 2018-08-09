@@ -1,4 +1,13 @@
 ---
+- name: install Zenity
+  pacman:
+    name: zenity
+
+- name: install ffmpeg-compat-54
+  aur:
+    name: ffmpeg-compat-54
+    user: aurman
+
 - name: install spotify
   aur:
     name: spotify

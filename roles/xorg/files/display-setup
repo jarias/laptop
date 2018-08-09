@@ -1,0 +1,25 @@
+#!/bin/sh
+
+IN="eDP1"
+EXT="HDMI1"
+
+pkill polybar || true
+
+if (xrandr | grep "$EXT disconnected"); then
+  xrandr --output $EXT --off --output $IN --auto --primary
+  polybar int &
+else
+  xrandr --output $IN \
+         --off \
+         --output $EXT \
+         --primary \
+         --mode 1920x1080 \
+         --scale 2x2
+  polybar ext &
+fi
+
+pkill compton
+compton --xrender-sync-fence &
+
+sleep 0.5
+feh --bg-scale ~/Pictures/wallpaper.png
