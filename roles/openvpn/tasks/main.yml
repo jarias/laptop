@@ -11,3 +11,9 @@
 - name: install NetworkManager OpenVPN support
   pacman:
     name: networkmanager-openvpn
+
+- name: enable and start systemd-resolved
+  service:
+    name: systemd-resolved
+    state: started
+    enabled: yes
