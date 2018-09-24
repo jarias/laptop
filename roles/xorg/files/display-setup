@@ -5,16 +5,18 @@ EXT="HDMI1"
 
 pkill polybar || true
 
+polybar int &
+
 if (xrandr | grep "$EXT disconnected"); then
   xrandr --output $EXT --off --output $IN --auto --primary
-  polybar int &
 else
   xrandr --output $IN \
-         --off \
-         --output $EXT \
-         --primary \
-         --mode 1920x1080 \
-         --scale 2x2
+    --auto \
+    --output $EXT \
+    --primary \
+    --mode 1920x1080 \
+    --scale 2x2 \
+    --right-of $IN
   polybar ext &
 fi
 
