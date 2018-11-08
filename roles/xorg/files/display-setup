@@ -5,13 +5,12 @@ EXT="HDMI1"
 
 pkill polybar || true
 
-polybar int &
-
 if (xrandr | grep "$EXT disconnected"); then
+  polybar int &
   xrandr --output $EXT --off --output $IN --auto --primary
 else
   xrandr --output $IN \
-    --auto \
+    --off \
     --output $EXT \
     --primary \
     --mode 1920x1080 \
@@ -24,4 +23,4 @@ pkill compton
 compton --xrender-sync-fence &
 
 sleep 0.5
-feh --bg-scale ~/Pictures/wallpaper.png
+feh --bg-scale ~/Pictures/wallpaper.png --bg-scale ~/Pictures/wallpaper.png
