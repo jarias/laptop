@@ -22,6 +22,11 @@
     name: ttf-ms-fonts
     user: aurman
 
+- name: install nerd fonts
+  aur:
+    name: nerd-fonts-complete
+    user: aurman
+
 - name: set console font
   copy:
     src: vconsole.conf
