@@ -15,7 +15,7 @@ parted -s $ROOT_DEVICE set 1 esp on
 parted -s -a optimal $ROOT_DEVICE mkpart boot ext4 551MiB 651MiB
 parted -s -a optimal $ROOT_DEVICE mkpart primary ext4 651MiB 100%
 
-mkfs.vfat -F -n esp 32 $ESP_PARTITION
+mkfs.vfat -F 32 -n esp $ESP_PARTITION
 mkfs.ext4 -F -L boot $BOOT_PARTITION
 
 cryptsetup -y -v luksFormat --type luks2 $ROOT_PARTITION
